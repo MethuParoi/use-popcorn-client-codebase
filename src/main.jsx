@@ -27,13 +27,6 @@ createRoot(document.getElementById("root")).render(
   </StrictMode>
 );
 
-// import { StrictMode } from 'react'
-// import { createRoot } from 'react-dom/client'
-// import './index.css'
-// import App from './App.jsx'
+//https://assignment-10-server-three-theta.vercel.app/
 
-// createRoot(document.getElementById('root')).render(
-//   <StrictMode>
-//     <App />
-//   </StrictMode>,
-// )
+
