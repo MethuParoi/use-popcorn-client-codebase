@@ -4,10 +4,9 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import NotFound from "../pages/NotFound";
 import PrivateRoute from "./PrivateRoute";
-import Profile from "../pages/Profile";
 import Home from "../pages/Home";
-import AdventureDetails from "../pages/AdventureDetails";
-import UpdateProfile from "../components/profile/UpdateProfile";
+import MovieDetails from "../pages/MovieDetails";
+// import UpdateProfile from "../components/profile/UpdateProfile";
 import ForgotPassword from "../pages/ForgotPassword";
 
 const router = createBrowserRouter([
@@ -19,30 +18,30 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
-      {
-        path: "/profile",
-        element: (
-          <PrivateRoute>
-            <Profile />
-          </PrivateRoute>
-        ),
-      },
-      {
-        path: "/profile/update-profile",
-        element: (
-          <PrivateRoute>
-            <UpdateProfile />
-          </PrivateRoute>
-        ),
-      },
-      {
-        path: "/adventure-details/:id",
-        element: (
-          <PrivateRoute>
-            <AdventureDetails />
-          </PrivateRoute>
-        ),
-      },
+      //   {
+      //     path: "/profile",
+      //     element: (
+      //       <PrivateRoute>
+      //         <Profile />
+      //       </PrivateRoute>
+      //     ),
+      //   },
+      //   {
+      //     path: "/profile/update-profile",
+      //     element: (
+      //       <PrivateRoute>
+      //         <UpdateProfile />
+      //       </PrivateRoute>
+      //     ),
+      //   },
+      //   {
+      //     path: "/adventure-details/:id",
+      //     element: (
+      //       <PrivateRoute>
+      //         <AdventureDetails />
+      //       </PrivateRoute>
+      //     ),
+      //   },
     ],
   },
 

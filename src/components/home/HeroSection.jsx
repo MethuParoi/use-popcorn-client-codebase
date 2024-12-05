@@ -6,9 +6,9 @@ import {
   A11y,
   Autoplay,
 } from "swiper/modules";
-import banner13 from "../../assets/hero/poster-1.avif";
-import banner14 from "../../assets/hero/poster-2.jpg";
-import banner11 from "../../assets/hero/poster-3.webp";
+import banner13 from "../../assets/hero/avengers.jpg";
+import banner14 from "../../assets/hero/intersteller.jpg";
+import banner11 from "../../assets/hero/oppenhimer.jpg";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
