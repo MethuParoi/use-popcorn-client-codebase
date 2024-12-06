@@ -138,6 +138,16 @@ function Navbar() {
           </li>
           <li>
             <button
+              onClick={() => navigate("/upcoming-movies")}
+              className={`text-neutral ${
+                location.pathname === "/upcoming-movies" && "active"
+              }`}
+            >
+              Upcoming Movies
+            </button>
+          </li>
+          <li>
+            <button
               onClick={() => navigate("/add-movie")}
               className={`text-neutral ${
                 location.pathname === "/add-movie" && "active"
@@ -154,16 +164,6 @@ function Navbar() {
               }`}
             >
               My Favorites
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => navigate("/upcoming-movies")}
-              className={`text-neutral ${
-                location.pathname === "/upcoming-movies" && "active"
-              }`}
-            >
-              Upcoming Movies
             </button>
           </li>
         </ul>
