@@ -1,21 +1,36 @@
-# Eco-Adventure Experiences
+# UsePopcorn
 
-**Live Demo:** [Eco-Adventure Experiences Live Demo](https://auth-01-a13b1.firebaseapp.com/)
+**Live Demo:** [usePopcorn Live Demo](https://.../)
 
 
 
 ## 📝 Project Purpose
+The Movie Review and Suggestion Website is designed to offer movie enthusiasts a platform to discover new movies, share their opinions, and get personalized recommendations. This project bridges the gap between users searching for the next great film to watch and those who love analyzing and reviewing cinema. Whether you're a casual viewer or a cinephile, this website provides the tools and features to enhance your movie-watching experience.
 
-Eco-Adventure Experiences is a travel blog designed to inspire and guide adventure enthusiasts in exploring eco-friendly travel destinations. The platform provides detailed information on various adventure spots, including activities, accommodations, and eco-friendly practices. By promoting sustainable travel, Eco-Adventure Experiences aims to encourage responsible tourism and environmental conservation. Users can access real-time updates, share their experiences, and connect with like-minded travelers, making it a comprehensive resource for planning unforgettable eco-adventures.
 
 
 ## 🌟 Key Features
 
-1. **Detailed Adventure Spot Information**: Comprehensive details on various eco-friendly adventure destinations, including activities, accommodations, and eco-friendly practices.
-2. **User Reviews and Ratings**: Users can share their experiences and rate different adventure spots, helping others make informed decisions.
-3. **Sustainable Travel Tips**: Access valuable tips and resources on how to travel sustainably and minimize environmental impact.
-4. **Real-time Updates:**: Stay updated with the latest information on travel destinations, weather conditions, and travel advisories.
-5. **Community Engagement**: Connect with like-minded travelers, share experiences, and participate in discussions through the community forum
+1. **Personalized Movie Suggestions**: 
+Get tailored recommendations based on your viewing history, ratings, and reviews.
+Discover trending and highly rated movies in various genres.
+Explore suggestions curated by the community.
+2. **User Reviews and Ratings**: 
+Share your opinions on movies by writing reviews and giving star ratings.
+Read detailed reviews from other users to make informed viewing decisions.
+Sort and filter reviews by ratings, popularity, and recency.
+3. **Interactive Movie Database**: 
+Access a comprehensive catalog of movies with details like cast, genre, release year, and IMDb ratings.
+Search for movies using advanced filters like genre, rating, and release date.
+Explore similar movies and sequels for each title.
+4. **Community Engagement:**: 
+Follow other users and see their reviews and ratings.
+Engage with the community by liking, commenting on, or sharing reviews.
+Join discussions on popular movies or topics in the forums.
+5. **Dark Mode and Light Mode**: 
+Switch between dark and light themes for a comfortable browsing experience.
+The theme preference is saved to provide a consistent experience across sessions.
+
 
 
 ## 🚀  NPM Packages used in the project
@@ -24,5 +39,5 @@ Eco-Adventure Experiences is a travel blog designed to inspire and guide adventu
 - **React-toastify** - for elegant notifications and alerts
 - **React-icons** - for adding iconography and enhancing the UX
 - **Swiperjs** - for hero slider
-- **Animate.css** - for creating homepage animations
+- **React-hook-form** - for managing complex form data
 
