@@ -24,7 +24,7 @@ import { useContext, useRef, useState } from "react";
 
 import { FaArrowCircleLeft, FaArrowCircleRight } from "react-icons/fa";
 import HeroBanner from "./HeroBanner";
-import Button from "../ui/Button";
+import HeroDesc from "./HeroDesc";
 
 export default function HeroSection() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -64,18 +64,13 @@ export default function HeroSection() {
                 activeIndex === 0 ? "" : ""
               }`}
             >
-              <h1 className="text-primary text-2xl lg:text-5xl font-semibold select-none pointer-events-none bg-gradient-to-r from-gray-700 to-transparent rounded-lg px-1 py-1 ">
-                Explore the Mountain
-              </h1>
-              <div className="lg:pl-[20rem]">
-                <Button
-                  label="Explore Now"
-                  type="primary"
-                  onClick={() => {
-                    window.scrollTo({ top: 500, behavior: "smooth" });
-                  }}
-                />
-              </div>
+              <HeroDesc
+                title={"Avengers: Endgame"}
+                duration={181}
+                description={
+                  "After the devastating events of Avengers: Infinity War, the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos actions and restore order to the universe once and forall, no matter what consequences may be in store."
+                }
+              />
             </div>
           </div>
         </SwiperSlide>
@@ -88,19 +83,13 @@ export default function HeroSection() {
                 activeIndex === 1 ? "" : ""
               }`}
             >
-              <h1 className="text-primary text-2xl lg:text-5xl font-semibold select-none pointer-events-none bg-gradient-to-r from-gray-700 to-transparent rounded-lg px-1 py-1">
-                Explore the Greenery
-              </h1>
-              <div className="">
-                <Button
-                  className=""
-                  label="Explore Now"
-                  type="primary"
-                  onClick={() => {
-                    window.scrollTo({ top: 500, behavior: "smooth" });
-                  }}
-                />
-              </div>
+              <HeroDesc
+                title={"Oppenheimer"}
+                duration={180}
+                description={
+                  "A dramatization of the life story of J. Robert Oppenheimer, the physicist who had a large hand in the development of the atomic bombs that brought an end to World War II."
+                }
+              />
             </div>
           </div>
         </SwiperSlide>
@@ -112,16 +101,12 @@ export default function HeroSection() {
                 activeIndex === 2 ? "" : ""
               }`}
             >
-              <h1 className="text-primary text-2xl lg:text-5xl font-semibold select-none pointer-events-none bg-gradient-to-r from-gray-700 to-transparent rounded-lg px-1 py-1 ">
-                View the Sunrise
-              </h1>
-
-              <Button
-                label="Explorer Now"
-                type="primary"
-                onClick={() => {
-                  window.scrollTo({ top: 500, behavior: "smooth" });
-                }}
+              <HeroDesc
+                title={"Interstellar"}
+                duration={169}
+                description={
+                  "When Earth becomes uninhabitable in the future, a farmer and ex-NASA pilot, Joseph Cooper, is tasked to pilot a spacecraft, along with a team of researchers, to find a new planet for humans."
+                }
               />
             </div>
           </div>
