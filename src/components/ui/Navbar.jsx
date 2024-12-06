@@ -1,9 +1,10 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
+import { FaMoon } from "react-icons/fa6";
 
-function Navbar() {
+function Navbar({ toggleTheme, currentTheme }) {
   const location = useLocation();
 
   const [showUserName, setShowUserName] = useState(false);
@@ -174,7 +175,7 @@ function Navbar() {
             user ? handleLogout() : null;
             user ? navigate("/") : navigate("/login");
           }}
-          className="text-neutral hover:text-gray-800 btn bg-primary border-transparent hover:bg-accent hidden md:block"
+          className="text-neutral dark:text-white hover:text-gray-800 btn bg-primary border-transparent hover:bg-accent hidden md:block"
         >
           {user ? "Logout" : "Login"}
         </button>
@@ -192,10 +193,18 @@ function Navbar() {
           </div>
         )}
         {showUserName && (
-          <div className="text-neutral font-medium text-xl btn bg-primary border-transparent hover:bg-accent absolute top-1 right-24">
+          <div className="text-neutral dark:text-white font-medium text-xl btn bg-primary border-transparent hover:bg-accent absolute top-1 right-44">
             {user.displayName}
           </div>
         )}
+        <button onClick={toggleTheme} className="flex flex-col items-center">
+          <div className="w-8 h-8 rounded-[50%] flex items-center justify-center bg-gray-200 dark:bg-gray-800">
+            <FaMoon className="text-2xl" />
+          </div>
+          <p className="text-sm">
+            {currentTheme === "light" ? "Dark" : "Light"} Mode
+          </p>
+        </button>
       </div>
     </div>
   );
