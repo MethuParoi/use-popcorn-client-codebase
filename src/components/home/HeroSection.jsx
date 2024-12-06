@@ -40,20 +40,20 @@ export default function HeroSection() {
         spaceBetween={50}
         slidesPerView={1}
         autoplay={{ delay: 3000 }}
-        navigation={{
-          prevEl: navigationPrevRef.current,
-          nextEl: navigationNextRef.current,
-        }}
+        // navigation={{
+        //   prevEl: navigationPrevRef.current,
+        //   nextEl: navigationNextRef.current,
+        // }}
         pagination={{ clickable: true }}
-        onSwiper={(swiper) => {
-          // Necessary to update refs for custom buttons
-          setTimeout(() => {
-            swiper.params.navigation.prevEl = navigationPrevRef.current;
-            swiper.params.navigation.nextEl = navigationNextRef.current;
-            swiper.navigation.init();
-            swiper.navigation.update();
-          });
-        }}
+        // onSwiper={(swiper) => {
+        //   // Necessary to update refs for custom buttons
+        //   setTimeout(() => {
+        //     swiper.params.navigation.prevEl = navigationPrevRef.current;
+        //     swiper.params.navigation.nextEl = navigationNextRef.current;
+        //     swiper.navigation.init();
+        //     swiper.navigation.update();
+        //   });
+        // }}
         onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
       >
         <SwiperSlide>

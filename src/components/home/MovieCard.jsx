@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 function MovieCards({ movie }) {
   const navigate = useNavigate();
   const handleExplore = () => {
-    navigate(`/adventure-details/${movie._id}`);
+    navigate(`/movie-details/${movie._id}`);
   };
   return (
     <div className="card bg-base-100 dark:bg-gray-700 w-80 shadow-xl">
@@ -54,7 +54,7 @@ function MovieCards({ movie }) {
           }}
           className="w-[100%] h-12 bg-primary hover:bg-secondary text-neutral dark:text-white text-lg font-medium rounded-2xl  flex items-center justify-center mx-auto mt-4"
         >
-          Explore Now
+          See Details
         </button>
       </div>
     </div>
