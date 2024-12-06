@@ -7,7 +7,7 @@ import { useLocation } from "react-router-dom";
 function Home() {
   const location = useLocation();
   useEffect(() => {
-    const pageTitle = "use-popcorn | Home";
+    const pageTitle = "usePopcorn | Home";
     document.title = pageTitle;
   }, [location]);
 

@@ -8,6 +8,11 @@ import Home from "../pages/Home";
 import MovieDetails from "../pages/MovieDetails";
 // import UpdateProfile from "../components/profile/UpdateProfile";
 import ForgotPassword from "../pages/ForgotPassword";
+import AllMovies from "../pages/AllMovies";
+import AddMovies from "../pages/AddMovies";
+import UpdateMovies from "../pages/UpdateMovies";
+import MyFavorites from "../pages/MyFavorites";
+import UpcomingMovies from "../pages/UpcomingMovies";
 
 const router = createBrowserRouter([
   {
@@ -18,30 +23,38 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
-      //   {
-      //     path: "/profile",
-      //     element: (
-      //       <PrivateRoute>
-      //         <Profile />
-      //       </PrivateRoute>
-      //     ),
-      //   },
-      //   {
-      //     path: "/profile/update-profile",
-      //     element: (
-      //       <PrivateRoute>
-      //         <UpdateProfile />
-      //       </PrivateRoute>
-      //     ),
-      //   },
-      //   {
-      //     path: "/adventure-details/:id",
-      //     element: (
-      //       <PrivateRoute>
-      //         <AdventureDetails />
-      //       </PrivateRoute>
-      //     ),
-      //   },
+      {
+        path: "/all-movies",
+        element: <AllMovies />,
+      },
+      {
+        path: "/upcoming-movies",
+        element: <UpcomingMovies />,
+      },
+      {
+        path: "/add-movie",
+        element: (
+          <PrivateRoute>
+            <AddMovies />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/update-movie",
+        element: (
+          <PrivateRoute>
+            <UpdateMovies />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/my-favorites",
+        element: (
+          <PrivateRoute>
+            <MyFavorites />
+          </PrivateRoute>
+        ),
+      },
     ],
   },
 
