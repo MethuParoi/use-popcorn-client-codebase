@@ -38,7 +38,7 @@ const ExtraSection = () => {
       </div>
 
       {/* trending section */}
-      <div>
+      <div className="mt-16 mb-24">
         <h2 className="text-3xl font-semibold text-center">Trending Now</h2>
 
         <div className="xl:max-w-[1300px] mx-auto grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 my-10">

@@ -27,9 +27,6 @@ function Home() {
       });
   }, []);
 
-  useEffect(() => {
-    console.log(movies);
-  }, [movies]);
 
   return (
     <div className="relative">
