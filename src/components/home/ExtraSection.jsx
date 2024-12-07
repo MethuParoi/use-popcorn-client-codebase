@@ -12,7 +12,7 @@ const ExtraSection = () => {
       <div>
         <h2 className="text-3xl font-semibold text-center">IMDb Top Movies</h2>
 
-        <div className="xl:max-w-[1300px] mx-auto grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 my-10">
+        <div className="xl:max-w-[1300px] mx-auto grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 my-10 gap-y-6 sm:gap-y-0 justify-items-center">
           <ViewCard
             title={"The Shawshank Redemption"}
             summary={
@@ -41,7 +41,7 @@ const ExtraSection = () => {
       <div className="mt-16 mb-24">
         <h2 className="text-3xl font-semibold text-center">Trending Now</h2>
 
-        <div className="xl:max-w-[1300px] mx-auto grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 my-10">
+        <div className="xl:max-w-[1300px] mx-auto grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 my-10 gap-y-6 sm:gap-y-0 justify-items-center">
           <ViewCard
             title={"Oppenheimer"}
             summary={
