@@ -7,6 +7,7 @@ import { TfiTimer } from "react-icons/tfi";
 import { CiCalendarDate } from "react-icons/ci";
 import { FaRegStarHalfStroke } from "react-icons/fa6";
 import Button from "../components/ui/Button";
+import { toast } from "react-toastify";
 
 function MovieDetails() {
   const location = useLocation();
@@ -14,6 +15,8 @@ function MovieDetails() {
     const pageTitle = "usePopcorn | Details";
     document.title = pageTitle;
   }, [location]);
+
+  const { user } = useContext(AuthContext);
 
   const { id } = useParams();
   const [details, setDetails] = useState(null);
@@ -27,6 +30,43 @@ function MovieDetails() {
         setIsLoading(false);
       });
   }, [id]);
+
+  const handleAddFavorites = () => {
+    axios
+      .get(`http://localhost:3000/favorite-movie/${user.email}`)
+      .then((res) => {
+        const existingFavorites = res.data?.movies || [];
+
+        if (!existingFavorites.includes(id)) {
+          const updatedFavorites = [...existingFavorites, id];
+
+          // Update if the user already exists
+          axios
+            .patch(
+              `http://localhost:3000/update-favorite-movie/${user.email}`,
+              {
+                movies: updatedFavorites,
+              }
+            )
+            .then(() => {
+              res.status == 200 && toast.success("Movie added to favorites");
+            });
+        }
+      })
+      .catch((err) => {
+        // If the user does not exist, create a new record
+        if (err.response && err.response.status === 404) {
+          axios
+            .put(`http://localhost:3000/add-favorite-movie`, {
+              user_id: user.email,
+              movies: [id],
+            })
+            .then(() => {
+              toast.success("Movie added to favorites");
+            });
+        }
+      });
+  };
 
   return (
     <div className=" min-w-screen flex md:flex-row flex-col md:gap-x-16 md:justify-center md:mt-16 md:mb-32">
@@ -77,7 +117,7 @@ function MovieDetails() {
           <Button
             label={"Add Favorites"}
             type={"standard"}
-            onClick={() => console.log("clicked")}
+            onClick={handleAddFavorites}
           />
           <Button
             label={"Update Movie"}

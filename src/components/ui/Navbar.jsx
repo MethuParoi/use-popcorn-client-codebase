@@ -197,7 +197,10 @@ function Navbar({ toggleTheme, currentTheme }) {
             {user.displayName}
           </div>
         )}
-        <button onClick={toggleTheme} className="flex flex-col items-center">
+        <button
+          onClick={toggleTheme}
+          className="flex flex-col items-center ml-4"
+        >
           <div className="w-8 h-8 rounded-[50%] flex items-center justify-center bg-gray-200 dark:bg-gray-800">
             <FaMoon className="text-2xl" />
           </div>
