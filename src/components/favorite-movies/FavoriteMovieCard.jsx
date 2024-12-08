@@ -11,7 +11,7 @@ function FavoriteMovieCards({ movie, onRemoveFavorite }) {
   const handleDelete = () => {
     axios
       .delete(
-        `http://localhost:3000/delete-favorite-movie/${user.email}/${movie._id}`
+        `https://assignment-10-server-three-theta.vercel.app/delete-favorite-movie/${user.email}/${movie._id}`
       )
       .then((res) => {
         if (res.status === 200) {

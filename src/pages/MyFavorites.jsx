@@ -16,6 +16,7 @@ const MyFavorites = () => {
 
   const [movies, setMovies] = useState([]);
   const [favorites, setFavorites] = useState([]);
+  const [noFavorites, setNoFavorites] = useState(false);
   const [id, setId] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -30,12 +31,15 @@ const MyFavorites = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/favorite-movie/${user.email}`)
+      .get(
+        `https://assignment-10-server-three-theta.vercel.app/favorite-movie/${user.email}`
+      )
       .then((res) => {
         setId(res.data.movies);
         //filtering the movies
         const favMovies = movies.filter((movie) => id.includes(movie._id));
         setFavorites(favMovies);
+        setNoFavorites(favMovies.length === 0);
       });
   }, [movies, user?.email]);
 
@@ -52,7 +56,7 @@ const MyFavorites = () => {
         Favorite Movies
       </h2>
       <div>
-        {favorites.length === 0 && (
+        {noFavorites && favorites.length === 0 && (
           <h2 className="text-3xl font-semibold text-center text-gray-600 mt-16">
             No favorite movies found !
           </h2>

@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import Loader from "../components/ui/Loader/Loader";
 import { TfiTimer } from "react-icons/tfi";
@@ -22,6 +22,8 @@ function MovieDetails() {
   const [details, setDetails] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     axios
       .get(`https://assignment-10-server-three-theta.vercel.app/movie/${id}`)
@@ -31,9 +33,24 @@ function MovieDetails() {
       });
   }, [id]);
 
+  const handleDelete = () => {
+    axios
+      .delete(
+        `https://assignment-10-server-three-theta.vercel.app/delete-movie/${id}`
+      )
+      .then((res) => {
+        if (res.status === 200) {
+          toast.success("Movie deleted successfully");
+          navigate("/all-movies");
+        }
+      });
+  };
+
   const handleAddFavorites = () => {
     axios
-      .get(`http://localhost:3000/favorite-movie/${user.email}`)
+      .get(
+        `https://assignment-10-server-three-theta.vercel.app/favorite-movie/${user.email}`
+      )
       .then((res) => {
         const existingFavorites = res.data?.movies || [];
 
@@ -43,7 +60,7 @@ function MovieDetails() {
           // Update if the user already exists
           axios
             .patch(
-              `http://localhost:3000/update-favorite-movie/${user.email}`,
+              `https://assignment-10-server-three-theta.vercel.app/update-favorite-movie/${user.email}`,
               {
                 movies: updatedFavorites,
               }
@@ -57,10 +74,13 @@ function MovieDetails() {
         // If the user does not exist, create a new record
         if (err.response && err.response.status === 404) {
           axios
-            .put(`http://localhost:3000/add-favorite-movie`, {
-              user_id: user.email,
-              movies: [id],
-            })
+            .put(
+              `https://assignment-10-server-three-theta.vercel.app/add-favorite-movie`,
+              {
+                user_id: user.email,
+                movies: [id],
+              }
+            )
             .then(() => {
               toast.success("Movie added to favorites");
             });
@@ -127,7 +147,7 @@ function MovieDetails() {
           <Button
             label={"Delete Movie"}
             type={"standard"}
-            onClick={() => console.log("clicked")}
+            onClick={handleDelete}
           />
         </div>
       </div>
