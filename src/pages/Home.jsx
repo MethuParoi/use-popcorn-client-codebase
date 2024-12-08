@@ -18,11 +18,12 @@ function Home() {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     axios
-      .get("https://assignment-10-server-three-theta.vercel.app/all-movies")
+      .get(
+        "https://assignment-10-server-three-theta.vercel.app/featured-movies"
+      )
       .then((res) => {
         setMovies(res.data);
-        res.data.sort((a, b) => b.rating - a.rating);
-        setFeaturedMovies(res.data.slice(0, 6));
+        setFeaturedMovies(res.data);
         setLoading(false);
       });
   }, []);

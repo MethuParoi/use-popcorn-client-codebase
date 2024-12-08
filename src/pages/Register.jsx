@@ -83,17 +83,13 @@ const Register = () => {
         updateProfile(auth.currentUser, {
           displayName: formData.username,
           photoURL: formData.photoUrl,
-        })
-          .then(() => {
-            console.log("User profile updated");
-          })
-          .catch((error) => {
-            console.error(
-              "Error updating user profile:",
-              error.code,
-              error.message
-            );
-          });
+        }).catch((error) => {
+          console.error(
+            "Error updating user profile:",
+            error.code,
+            error.message
+          );
+        });
       })
       .catch((error) => {
         const errorMessage = error.message;

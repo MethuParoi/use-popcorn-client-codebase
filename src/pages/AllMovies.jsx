@@ -31,7 +31,6 @@ const AllMovies = () => {
       movie.movie_title.toLowerCase().includes(search.toLowerCase())
     );
     setFilteredMovies(filtered);
-    console.log(filtered);
   };
   return (
     <div>
