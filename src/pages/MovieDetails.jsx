@@ -41,7 +41,6 @@ function MovieDetails() {
       .then((res) => {
         if (res.status === 200) {
           navigate("/all-movies");
-          toast.success("Movie deleted successfully");
         }
       });
   };
@@ -58,32 +57,30 @@ function MovieDetails() {
           const updatedFavorites = [...existingFavorites, id];
 
           // Update if the user already exists
-          axios
-            .patch(
-              `https://assignment-10-server-three-theta.vercel.app/update-favorite-movie/${user.email}`,
-              {
-                movies: updatedFavorites,
-              }
-            )
-            .then(() => {
-              toast.success("Movie added to favorites");
-            });
+          axios.patch(
+            `https://assignment-10-server-three-theta.vercel.app/update-favorite-movie/${user.email}`,
+            {
+              movies: updatedFavorites,
+            }
+          );
+          // .then(() => {
+          //   toast.success("Movie added to favorites");
+          // });
         }
       })
       .catch((err) => {
         // If the user does not exist, create a new record
         if (err.response && err.response.status === 404) {
-          axios
-            .put(
-              `https://assignment-10-server-three-theta.vercel.app/add-favorite-movie`,
-              {
-                user_id: user.email,
-                movies: [id],
-              }
-            )
-            .then(() => {
-              toast.success("Movie added to favorites");
-            });
+          axios.put(
+            `https://assignment-10-server-three-theta.vercel.app/add-favorite-movie`,
+            {
+              user_id: user.email,
+              movies: [id],
+            }
+          );
+          // .then(() => {
+          //   toast.success("Movie added to favorites");
+          // });
         }
       });
   };
@@ -137,7 +134,10 @@ function MovieDetails() {
           <Button
             label={"Add Favorites"}
             type={"standard"}
-            onClick={handleAddFavorites}
+            onClick={() => {
+              handleAddFavorites();
+              toast.success("Movie added to favorites");
+            }}
           />
           <Button
             label={"Update Movie"}
@@ -147,7 +147,10 @@ function MovieDetails() {
           <Button
             label={"Delete Movie"}
             type={"standard"}
-            onClick={handleDelete}
+            onClick={() => {
+              handleDelete();
+              toast.success("Movie deleted successfully");
+            }}
           />
         </div>
       </div>
