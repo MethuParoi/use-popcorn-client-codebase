@@ -66,7 +66,7 @@ function MovieDetails() {
               }
             )
             .then(() => {
-              res.status == 200 && toast.success("Movie added to favorites");
+              toast.success("Movie added to favorites");
             });
         }
       })

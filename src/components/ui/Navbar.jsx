@@ -179,6 +179,16 @@ function Navbar({ toggleTheme, currentTheme }) {
         >
           {user ? "Logout" : "Login"}
         </button>
+        {!user && (
+          <button
+            onClick={() => {
+              navigate("/register");
+            }}
+            className="text-neutral dark:text-white hover:text-gray-800 btn bg-primary border-transparent hover:bg-accent hidden md:block ml-4"
+          >
+            Register
+          </button>
+        )}
         {user && (
           <div
             onMouseEnter={() => setShowUserName(true)}

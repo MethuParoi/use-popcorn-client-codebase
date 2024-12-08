@@ -30,7 +30,7 @@ const HeroDesc = ({ title, duration, description }) => {
         </div>
       </div>
 
-      <div className="w-[25rem] hidden sm:block">
+      <div className="w-[25rem] hidden lg:block">
         <p className="text-lg text-accent mt-4 line-clamp-4">{description}</p>
       </div>
     </div>

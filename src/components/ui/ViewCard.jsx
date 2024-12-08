@@ -1,6 +1,6 @@
 const ViewCard = ({ title, summary, img }) => {
   return (
-    <div className="card card-side bg-base-100 dark:bg-gray-700 shadow-xl w-[95%] sm:w-96 cursor-pointer">
+    <div className="card card-side bg-base-100 dark:bg-gray-700 shadow-xl w-[95%] sm:w-96 cursor-pointer sm:mb-6 lg:mb-0">
       <figure className="w-[200px]">
         <img className="w-full h-full object-cover" src={img} alt="Movie" />
       </figure>

@@ -3,45 +3,53 @@ import { useLocation } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../provider/AuthProvider";
 import Loader from "../components/ui/Loader/Loader";
-import MovieCards from "../components/home/MovieCard";
 import FavoriteMovieCards from "../components/favorite-movies/FavoriteMovieCard";
 
 const MyFavorites = () => {
   const location = useLocation();
+  const { user } = useContext(AuthContext);
+
+  const [favorites, setFavorites] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const pageTitle = "usePopcorn | Favorite Movies";
     document.title = pageTitle;
   }, [location]);
-  const { user } = useContext(AuthContext);
-
-  const [movies, setMovies] = useState([]);
-  const [favorites, setFavorites] = useState([]);
-  const [noFavorites, setNoFavorites] = useState(false);
-  const [id, setId] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios
-      .get("https://assignment-10-server-three-theta.vercel.app/all-movies")
-      .then((res) => {
-        setMovies(res.data);
-        setLoading(false);
-      });
-  }, []);
+    // Fetch both movies and favorites in parallel
+    const fetchFavorites = async () => {
+      try {
+        const [allMoviesRes, favoritesRes] = await Promise.all([
+          axios.get(
+            "https://assignment-10-server-three-theta.vercel.app/all-movies"
+          ),
+          axios.get(
+            `https://assignment-10-server-three-theta.vercel.app/favorite-movie/${user.email}`
+          ),
+        ]);
 
-  useEffect(() => {
-    axios
-      .get(
-        `https://assignment-10-server-three-theta.vercel.app/favorite-movie/${user.email}`
-      )
-      .then((res) => {
-        setId(res.data.movies);
-        //filtering the movies
-        const favMovies = movies.filter((movie) => id.includes(movie._id));
+        const allMovies = allMoviesRes.data;
+        const favoriteIds = favoritesRes.data.movies;
+
+        // Filter the favorite movies
+        const favMovies = allMovies.filter((movie) =>
+          favoriteIds.includes(movie._id)
+        );
+
         setFavorites(favMovies);
-        setNoFavorites(favMovies.length === 0);
-      });
-  }, [movies, user?.email]);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching favorite movies:", error);
+        setLoading(false);
+      }
+    };
+
+    if (user?.email) {
+      fetchFavorites();
+    }
+  }, [user?.email]);
 
   const handleRemoveFavorite = (movieId) => {
     setFavorites((prevFavorites) =>
@@ -51,29 +59,28 @@ const MyFavorites = () => {
 
   return (
     <div>
-      <div className="z-50 fixed top-1/2 left-1/2">{loading && <Loader />}</div>
-      <h2 className="text-3xl font-semibold text-center  my-8 border-b-2 border-gray-400 w-[250px] mx-auto">
+      {loading && <Loader className="z-50 fixed top-1/2 left-1/2" />}
+      <h2 className="text-3xl font-semibold text-center my-8 border-b-2 border-gray-400 w-[250px] mx-auto">
         Favorite Movies
       </h2>
-      <div>
-        {noFavorites && favorites.length === 0 && (
-          <h2 className="text-3xl font-semibold text-center text-gray-600 mt-16">
-            No favorite movies found !
-          </h2>
-        )}
-      </div>
+      {!loading && favorites.length === 0 && (
+        <h2 className="text-3xl font-semibold text-center text-gray-600 mt-16">
+          No favorite movies found!
+        </h2>
+      )}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-y-16 justify-items-center my-16 xl:max-w-[1300px] mx-auto">
-        {favorites &&
-          favorites.map((movie) => (
-            <FavoriteMovieCards
-              key={movie._id}
-              movie={movie}
-              onRemoveFavorite={handleRemoveFavorite}
-            />
-          ))}
+        {favorites.map((movie) => (
+          <FavoriteMovieCards
+            key={movie._id}
+            movie={movie}
+            onRemoveFavorite={handleRemoveFavorite}
+          />
+        ))}
       </div>
     </div>
   );
 };
 
 export default MyFavorites;
+
+

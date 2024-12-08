@@ -10,7 +10,9 @@ const ExtraSection = () => {
   return (
     <div>
       <div>
-        <h2 className="text-3xl font-semibold text-center">IMDb Top Movies</h2>
+        <h2 className="text-3xl font-semibold text-center border-b-2 border-gray-500 w-[280px] mx-auto">
+          IMDb Top Movies
+        </h2>
 
         <div className="xl:max-w-[1300px] mx-auto grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 my-10 gap-y-6 sm:gap-y-0 justify-items-center">
           <ViewCard
@@ -39,7 +41,9 @@ const ExtraSection = () => {
 
       {/* trending section */}
       <div className="mt-16 mb-24">
-        <h2 className="text-3xl font-semibold text-center">Trending Now</h2>
+        <h2 className="text-3xl font-semibold text-center border-b-2 border-gray-500 w-[250px] mx-auto">
+          Trending Now
+        </h2>
 
         <div className="xl:max-w-[1300px] mx-auto grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 my-10 gap-y-6 sm:gap-y-0 justify-items-center">
           <ViewCard
