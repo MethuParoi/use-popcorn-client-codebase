@@ -16,7 +16,7 @@ const googleProvider = new GoogleAuthProvider();
 function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  // const [render, setRender] = useState(false);
+  const [filteredMovies, setFilteredMovies] = useState([]);
 
   const createUser = (email, password) => {
     setLoading(true);
@@ -61,6 +61,8 @@ function AuthProvider({ children }) {
   const authInfo = {
     user,
     loading,
+    filteredMovies,
+    setFilteredMovies,
     createUser,
     loginUser,
     logoutUser,

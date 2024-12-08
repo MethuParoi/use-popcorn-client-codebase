@@ -36,7 +36,7 @@ const AddMovies = () => {
       rating,
       user_email,
     };
-    console.log(movieData);
+    // console.log(movieData);
     axios
       .post(
         "https://assignment-10-server-three-theta.vercel.app/add-movie",
@@ -57,7 +57,7 @@ const AddMovies = () => {
   };
 
   return (
-    <div className="p-6  mx-auto ">
+    <div className="sm:p-6 p-2  mx-auto mb-10">
       <h2 className="text-3xl font-semibold text-center  my-8 border-b-2 border-gray-400 w-[250px] mx-auto">
         Add New Movie
       </h2>
@@ -184,6 +184,7 @@ const AddMovies = () => {
           <Rating
             onClick={handleRating}
             ratingValue={rating}
+            iconsCount={10}
             size={24}
             fillColor="gold"
             emptyColor="gray"
@@ -233,56 +234,4 @@ const AddMovies = () => {
 
 export default AddMovies;
 
-// import { useEffect } from "react";
-// import { useForm } from "react-hook-form";
-// import { useLocation } from "react-router-dom";
 
-// const AddMovies = () => {
-//   const location = useLocation();
-//   useEffect(() => {
-//     const pageTitle = "usePopcorn | Add Movies";
-//     document.title = pageTitle;
-//   }, [location]);
-
-//   const {
-//     register,
-//     handleSubmit,
-//     watch,
-//     formState: { errors },
-//   } = useForm();
-//   const onSubmit = (data) => console.log(data);
-//   return (
-//     <div>
-//       <h2>Add New Movie</h2>
-//       <form onSubmit={handleSubmit(onSubmit)}>
-//         <input
-//           type="text"
-//           placeholder="Movie Title"
-//           {...register("title", { required: true })}
-//         />
-//         {errors.title && <span>This field is required</span>}
-//         <input
-//           type="text"
-//           placeholder="Movie Description"
-//           {...register("description", { required: true })}
-//         />
-//         {errors.description && <span>This field is required</span>}
-//         <input
-//           type="text"
-//           placeholder="Movie Image URL"
-//           {...register("image", { required: true })}
-//         />
-//         {errors.image && <span>This field is required</span>}
-//         <input
-//           type="number"
-//           placeholder="Movie Rating"
-//           {...register("rating", { required: true })}
-//         />
-//         {errors.rating && <span>This field is required</span>}
-//         <button type="submit">Submit</button>
-//       </form>
-//     </div>
-//   );
-// };
-
-// export default AddMovies;

@@ -40,8 +40,8 @@ function MovieDetails() {
       )
       .then((res) => {
         if (res.status === 200) {
-          toast.success("Movie deleted successfully");
           navigate("/all-movies");
+          toast.success("Movie deleted successfully");
         }
       });
   };
@@ -142,7 +142,7 @@ function MovieDetails() {
           <Button
             label={"Update Movie"}
             type={"standard"}
-            onClick={() => console.log("clicked")}
+            onClick={() => navigate(`/update-movie/${id}`)}
           />
           <Button
             label={"Delete Movie"}

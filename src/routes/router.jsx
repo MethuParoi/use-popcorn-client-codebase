@@ -48,7 +48,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/update-movie",
+        path: "/update-movie/:id",
         element: (
           <PrivateRoute>
             <UpdateMovies />
