@@ -7,6 +7,7 @@ import axios from "axios";
 import Loader from "../components/ui/Loader/Loader";
 import Button from "../components/ui/Button";
 import LatestRelease from "../components/home/LatestRelease";
+import EntertainmentInfo from "../components/home/EntertainmentInfo";
 
 function Home() {
   const location = useLocation();
@@ -53,7 +54,9 @@ function Home() {
         </div>
       </div>
       <LatestRelease />
+
       <ExtraSection />
+      <EntertainmentInfo />
     </div>
   );
 }

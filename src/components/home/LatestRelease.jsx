@@ -1,5 +1,5 @@
 import { FaLongArrowAltRight } from "react-icons/fa";
-import img from "../../assets/new_release.jpg";
+import img from "../../assets/new_release.webp";
 
 const LatestRelease = () => {
   return (
