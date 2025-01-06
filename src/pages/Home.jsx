@@ -6,6 +6,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Loader from "../components/ui/Loader/Loader";
 import Button from "../components/ui/Button";
+import LatestRelease from "../components/home/LatestRelease";
 
 function Home() {
   const location = useLocation();
@@ -51,6 +52,7 @@ function Home() {
           />
         </div>
       </div>
+      <LatestRelease />
       <ExtraSection />
     </div>
   );
