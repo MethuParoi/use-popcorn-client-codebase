@@ -17,6 +17,7 @@ const ExtraSection = () => {
         <div className="xl:max-w-[1300px] mx-auto grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 my-10 gap-y-6 sm:gap-y-0 justify-items-center">
           <ViewCard
             title={"The Shawshank Redemption"}
+            link={"https://www.imdb.com/title/tt0111161/"}
             summary={
               "A banker convicted of uxoricide forms a friendship over a quarter century with a hardened convict, while maintaining his innocence and trying to remain hopeful through simple compassion."
             }
@@ -24,6 +25,7 @@ const ExtraSection = () => {
           />
           <ViewCard
             title={"The Godfather"}
+            link={"https://www.imdb.com/title/tt0068646/"}
             summary={
               "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son."
             }
@@ -31,6 +33,7 @@ const ExtraSection = () => {
           />
           <ViewCard
             title={"The Dark Knight"}
+            link={"https://www.imdb.com/title/tt0468569/"}
             summary={
               "When a menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman, James Gordon and Harvey Dent must work together to put an end to the madness."
             }
@@ -48,6 +51,7 @@ const ExtraSection = () => {
         <div className="xl:max-w-[1300px] mx-auto grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 my-10 gap-y-6 sm:gap-y-0 justify-items-center">
           <ViewCard
             title={"Oppenheimer"}
+            link={"https://www.imdb.com/title/tt15398776/"}
             summary={
               "The story of J. Robert Oppenheimer and his role in the development of the atomic bomb during World War II."
             }
@@ -55,6 +59,7 @@ const ExtraSection = () => {
           />
           <ViewCard
             title={"Barbie"}
+            link={"https://www.imdb.com/title/tt1517268/"}
             summary={
               "Barbie faces an existential crisis that takes her on a journey of self-discovery in the real world."
             }
@@ -62,6 +67,7 @@ const ExtraSection = () => {
           />
           <ViewCard
             title={"Spider-Man: Across the Spider-Verse"}
+            link={"https://www.imdb.com/title/tt9362722/"}
             summary={
               "Miles Morales catapults across the Multiverse, where he encounters a team of Spider-People charged with protecting its very existence."
             }
