@@ -12,7 +12,15 @@ const EntertainmentInfo = () => {
 
       <div className="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 md:grid-rows-2 my-10 gap-y-6 sm:gap-8 justify-items-center px-4">
         {/* item-1 */}
-        <div className="col-span-2 row-span-2 relative group cursor-pointer md:h-[700px]">
+        <div
+          onClick={() =>
+            window.open(
+              "https://editorial.rottentomatoes.com/guide/best-new-movies/",
+              "_blank"
+            )
+          }
+          className="col-span-2 row-span-2 relative group cursor-pointer md:h-[700px]"
+        >
           <img src={img1} alt="img" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-55 transition duration-300"></div>
           {/* text */}
@@ -23,7 +31,12 @@ const EntertainmentInfo = () => {
           </div>
         </div>
         {/* item-2 */}
-        <div className=" relative group cursor-pointer md:h-[330px]">
+        <div
+          onClick={() =>
+            window.open("https://www.imdb.com/chart/boxoffice/", "_blank")
+          }
+          className=" relative group cursor-pointer md:h-[330px]"
+        >
           <img src={img2} alt="img" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-55 transition duration-300"></div>
           {/* text */}
@@ -34,7 +47,12 @@ const EntertainmentInfo = () => {
           </div>
         </div>
         {/* item-3 */}
-        <div className=" relative group cursor-pointer md:h-[330px]">
+        <div
+          onClick={() =>
+            window.open("https://www.imdb.com/chart/moviemeter/", "_blank")
+          }
+          className=" relative group cursor-pointer md:h-[330px]"
+        >
           <img src={img3} alt="img" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-55 transition duration-300"></div>
           {/* text */}
@@ -45,7 +63,12 @@ const EntertainmentInfo = () => {
           </div>
         </div>
         {/* item-4 */}
-        <div className="col-span-2 relative group cursor-pointer md:h-[330px] w-full">
+        <div
+          onClick={() =>
+            window.open("https://www.imdb.com/poll/Ji7bSoilTZM/", "_blank")
+          }
+          className="col-span-2 relative group cursor-pointer md:h-[330px] w-full"
+        >
           <img src={img4} alt="img" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-55 transition duration-300"></div>
           {/* text */}

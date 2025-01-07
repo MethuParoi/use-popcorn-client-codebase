@@ -27,11 +27,14 @@ const UpcomingMovies = () => {
       </div>
       {/* upcoming movies */}
       <div className="mt-6">
-        <h2 className="text-3xl font-semibold text-center">Upcoming Movies</h2>
+        <h2 className="text-3xl font-semibold text-center border-b-2 border-gray-400 w-[300px] mx-auto">
+          Upcoming Movies
+        </h2>
 
         <div className="xl:max-w-[1300px] mx-auto grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 justify-items-center my-10 gap-x-6 gap-y-8 sm:gap-y-16 mb-24">
           <ViewCard
             title={"Dune: Part Two"}
+            link={"https://www.imdb.com/title/tt15239678/"}
             summary={
               "Paul Atreides unites with Chani and the Fremen while seeking revenge against the conspirators who destroyed his family."
             }
@@ -39,6 +42,7 @@ const UpcomingMovies = () => {
           />
           <ViewCard
             title={"Avatar 3"}
+            link={"https://www.imdb.com/title/tt1757678/"}
             summary={
               "The journey continues as Jake Sully and Neytiri face new challenges on Pandora, exploring new tribes and territories."
             }
@@ -46,6 +50,7 @@ const UpcomingMovies = () => {
           />
           <ViewCard
             title={"The Marvels"}
+            link={"https://www.imdb.com/title/tt10676048/"}
             summary={
               "Captain Marvel teams up with Ms. Marvel and Monica Rambeau to save the universe from a new cosmic threat."
             }
@@ -53,6 +58,7 @@ const UpcomingMovies = () => {
           />
           <ViewCard
             title={"The Hunger Games: The Ballad of Songbirds & Snakes"}
+            link={"https://www.imdb.com/title/tt10545296/"}
             summary={
               "The story of a young Coriolanus Snow, set decades before he becomes the tyrannical President of Panem."
             }
@@ -60,6 +66,7 @@ const UpcomingMovies = () => {
           />
           <ViewCard
             title={"Mission: Impossible – Dead Reckoning Part Two"}
+            link={"https://www.imdb.com/title/tt9603208/"}
             summary={
               "Ethan Hunt and his IMF team continue their dangerous mission to stop a catastrophic global threat."
             }
@@ -67,6 +74,7 @@ const UpcomingMovies = () => {
           />
           <ViewCard
             title={"Wonka"}
+            link={"https://www.imdb.com/title/tt6166392/"}
             summary={
               "A young Willy Wonka embarks on a magical journey to become the world-famous chocolatier."
             }
