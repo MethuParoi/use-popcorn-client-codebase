@@ -7,7 +7,7 @@ import {
   Autoplay,
 } from "swiper/modules";
 import banner13 from "../../assets/hero/avengers.jpg";
-import banner14 from "../../assets/hero/intersteller.jpg";
+import banner14 from "../../assets/hero/intersteller.webp";
 import banner11 from "../../assets/hero/oppenhimer.jpg";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -19,7 +19,7 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/css/autoplay";
 
-import { useContext, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 // import LoadingContext from "../ContextApi/LoadingContext";
 
 import { FaArrowCircleLeft, FaArrowCircleRight } from "react-icons/fa";
@@ -32,28 +32,42 @@ export default function HeroSection() {
   const navigationPrevRef = useRef(null);
   const navigationNextRef = useRef(null);
 
+  useEffect(() => {
+    if (navigationPrevRef.current && navigationNextRef.current) {
+      navigationPrevRef.current.addEventListener("click", () => {
+        swiperRef.current.swiper.slidePrev();
+      });
+      navigationNextRef.current.addEventListener("click", () => {
+        swiperRef.current.swiper.slideNext();
+      });
+    }
+  }, []);
+
   return (
-    <div className="relative">
+    <div className="relative mt-14">
       <Swiper
         // install Swiper modules
         modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
         spaceBetween={50}
         slidesPerView={1}
-        autoplay={{ delay: 3000 }}
-        // navigation={{
-        //   prevEl: navigationPrevRef.current,
-        //   nextEl: navigationNextRef.current,
-        // }}
+        autoplay={{ delay: 4000 }}
+        navigation={{
+          prevEl: navigationPrevRef.current,
+          nextEl: navigationNextRef.current,
+        }}
         pagination={{ clickable: true }}
-        // onSwiper={(swiper) => {
-        //   // Necessary to update refs for custom buttons
-        //   setTimeout(() => {
-        //     swiper.params.navigation.prevEl = navigationPrevRef.current;
-        //     swiper.params.navigation.nextEl = navigationNextRef.current;
-        //     swiper.navigation.init();
-        //     swiper.navigation.update();
-        //   });
-        // }}
+        onSwiper={(swiper) => {
+          // Necessary to update refs for custom buttons
+          // setTimeout(() => {
+          //   swiper.params.navigation.prevEl = navigationPrevRef.current;
+          //   swiper.params.navigation.nextEl = navigationNextRef.current;
+          //   swiper.navigation.init();
+          //   swiper.navigation.update();
+          // });
+          swiper.params.navigation.prevEl = navigationPrevRef.current;
+          swiper.params.navigation.nextEl = navigationNextRef.current;
+          swiper.navigation.update();
+        }}
         onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
       >
         <SwiperSlide>
@@ -97,7 +111,7 @@ export default function HeroSection() {
           <div className="flex justify-center items-center h-full w-full">
             <HeroBanner source={banner14} />
             <div
-              className={`absolute flex flex-col justify-center items-center lg:inline lg:pr-[60rem] ${
+              className={`absolute flex flex-col justify-center items-center lg:inline lg:pl-[35rem] xl:pl-[50rem] lg:pb-[10rem] ${
                 activeIndex === 2 ? "" : ""
               }`}
             >

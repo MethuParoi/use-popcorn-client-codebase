@@ -5,7 +5,7 @@ function Footer() {
     <div className="bg-secondary text-neutral p-10 flex flex-col items-center">
       <footer className="footer flex lg:flex-row flex-col items-start justify-center gap-x-72">
         <aside>
-          <h2 className="text-2xl font-semibold">usePopcorn</h2>
+          <h2 className="text-2xl font-semibold">🍿 usePopcorn</h2>
           <p>Authentic movie review website</p>
         </aside>
         <nav>

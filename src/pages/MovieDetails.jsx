@@ -86,7 +86,7 @@ function MovieDetails() {
   };
 
   return (
-    <div className=" min-w-screen flex md:flex-row flex-col md:gap-x-16 md:justify-center md:mt-16 md:mb-32">
+    <div className=" min-w-screen flex md:flex-row flex-col md:gap-x-16 md:justify-center md:mt-32 md:mb-32">
       <div className="z-50 fixed top-1/2 left-1/2">
         {isLoading && <Loader />}
       </div>

@@ -35,7 +35,7 @@ const AllMovies = () => {
   return (
     <div>
       <div className="z-50 fixed top-1/2 left-1/2">{loading && <Loader />}</div>
-      <div className="w-full my-4 flex items-center justify-center">
+      <div className="w-full mt-24 mb-4 flex items-center justify-center">
         <input
           className="border-2 border-gray-400 rounded-lg shadow-lg h-10 w-[250px] sm:w-[350px] px-2"
           type="text"
@@ -55,7 +55,7 @@ const AllMovies = () => {
       <h2 className="text-3xl font-semibold text-center  my-8 border-b-2 border-gray-400 w-[190px] mx-auto">
         All Movies
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-y-16 justify-items-center my-16 xl:max-w-[1300px] mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-16 justify-items-center my-16 xl:max-w-[1300px] mx-auto">
         {search.length !== 0 &&
           filteredMovies &&
           filteredMovies.map((movie) => (

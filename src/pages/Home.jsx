@@ -37,24 +37,23 @@ function Home() {
     <div className="relative">
       <div className="z-50 fixed top-1/2 left-1/2">{loading && <Loader />}</div>
       <HeroSection />
-      <h2 className="text-3xl font-semibold text-center mt-16 mb-8 border-b-2 border-gray-500 w-[280px] mx-auto">
+      <h2 className="text-3xl font-semibold text-center mt-12 mb-8 border-b-2 border-gray-500 w-[280px] mx-auto">
         Featured Movies
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-y-16 justify-items-center my-16 xl:max-w-[1300px] mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-16 justify-items-center my-16 xl:max-w-[1300px] mx-auto">
         {featuredMovies &&
           featuredMovies.map((movie) => (
             <MovieCards key={movie._id} movie={movie} />
           ))}
-        <div className=" justify-items-center">
-          <Button
-            type={"standard"}
-            label={"See All Movies"}
-            onClick={() => navigate("/all-movies")}
-          />
-        </div>
+      </div>
+      <div className=" flex justify-center mb-16">
+        <Button
+          type={"standard"}
+          label={"See All Movies"}
+          onClick={() => navigate("/all-movies")}
+        />
       </div>
       <LatestRelease />
-
       <ExtraSection />
       <EntertainmentInfo />
     </div>

@@ -9,7 +9,7 @@ function MovieCards({ movie }) {
     navigate(`/movie-details/${movie._id}`);
   };
   return (
-    <div className="card bg-base-100 dark:bg-gray-700 w-80 shadow-xl">
+    <div className="card bg-base-100 dark:bg-gray-700 w-80 xl:w-72 shadow-xl">
       <figure>
         <img
           className="w-full h-60 object-cover"

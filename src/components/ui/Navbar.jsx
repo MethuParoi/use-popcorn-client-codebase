@@ -3,6 +3,7 @@ import { AuthContext } from "../../provider/AuthProvider";
 import { useContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { FaMoon } from "react-icons/fa6";
+import { MdWbSunny } from "react-icons/md";
 
 function Navbar({ toggleTheme, currentTheme }) {
   const location = useLocation();
@@ -24,7 +25,7 @@ function Navbar({ toggleTheme, currentTheme }) {
   };
 
   return (
-    <div className="navbar bg-secondary pr-6">
+    <div className="navbar bg-secondary pr-6 fixed top-0 z-50">
       <div className="navbar-start">
         <div className="dropdown z-20">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -211,13 +212,29 @@ function Navbar({ toggleTheme, currentTheme }) {
           onClick={toggleTheme}
           className="flex flex-col items-center ml-4"
         >
+          <div
+            className={`w-10 h-10 rounded-[50%] flex items-center justify-center  dark:bg-gray-800 ${
+              currentTheme === "light" ? "bg-gray-700" : "bg-gray-200"
+            }`}
+          >
+            {currentTheme === "light" ? (
+              <FaMoon className="text-3xl text-gray-200" />
+            ) : (
+              <MdWbSunny className="text-3xl text-gray-200" />
+            )}
+          </div>
+        </button>
+        {/* <button
+          onClick={toggleTheme}
+          className="flex flex-col items-center ml-4"
+        >
           <div className="w-8 h-8 rounded-[50%] flex items-center justify-center bg-gray-200 dark:bg-gray-800">
             <FaMoon className="text-2xl" />
           </div>
           <p className="text-sm">
             {currentTheme === "light" ? "Dark" : "Light"} Mode
           </p>
-        </button>
+        </button> */}
       </div>
     </div>
   );
